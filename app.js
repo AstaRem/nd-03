@@ -107,3 +107,36 @@ for (let i = 0; i < one_word_A.length; i++){
 
 // task 7
 //Html faile sukurkite section tagą (tiesiogiai). Į sukurtą tagą, su JS, sudėkite span tagus, kurie yra geltoni apskritimai su centre užrašytais iš masyvo B nuskaitytų gyvūnų pavadinimų raidėm. Kiekvienas span tagas- atskira raidė. (visų gyvūnų visos raidės atskiruose span taguose).#ciklasCikle
+
+let section_el_4 =  document.querySelector(".gyvunai-apskritime-gelt");
+let line_text = '';
+
+// for (let i = 0; i < B.length; i++){
+//     let line_div = document.createElement('div');
+//     // console.log(line_div);
+//     console.log(i);
+//     console.log(B[i]);
+//     for(let a = 0; a < B[i].length; a++){
+//         console.log(B[i]);
+//         one_symbol = `<span>${B[i][a]}</span>`;
+//         one_symbol.style = "display:inline-block; width: 30px; height:30px; border-radius:50%; background-color:#efbf04; text-align:center";
+//         line_text += one_symbol;
+//         console.log(line_text)
+//         line_div.innerHTML += line_text;
+//         console.log(line_div);
+//     }
+//     section_el_4.appendChild(line_div);
+
+//     // section_el_4.innerHTML += `<div style="box-sizing: border-box;width: 150px; height:150px; border-radius:50%; background-color:#efbf04; color:#FFFFFF; text-align: center; display:flex; justify-content:center; align-items: center; font-size: 22px; font-weight: bold;">${B[i]}</div>`
+// }
+
+for (let i = 0; i < B.length; i++){
+    let line_div = document.createElement('div');
+
+    for (let a = 0; a < B[i].length; a++){
+        line_div.innerHTML += `<span style="display:inline-block; width: 30px; height:30px; border-radius:50%; background-color:#efbf04; text-align:center">${B[i][a]}</span>`
+    }
+    console.log(line_div)
+    section_el_4.appendChild(line_div);
+
+}
