@@ -109,26 +109,7 @@ for (let i = 0; i < one_word_A.length; i++){
 //Html faile sukurkite section tagą (tiesiogiai). Į sukurtą tagą, su JS, sudėkite span tagus, kurie yra geltoni apskritimai su centre užrašytais iš masyvo B nuskaitytų gyvūnų pavadinimų raidėm. Kiekvienas span tagas- atskira raidė. (visų gyvūnų visos raidės atskiruose span taguose).#ciklasCikle
 
 let section_el_4 =  document.querySelector(".gyvunai-apskritime-gelt");
-let line_text = '';
 
-// for (let i = 0; i < B.length; i++){
-//     let line_div = document.createElement('div');
-//     // console.log(line_div);
-//     console.log(i);
-//     console.log(B[i]);
-//     for(let a = 0; a < B[i].length; a++){
-//         console.log(B[i]);
-//         one_symbol = `<span>${B[i][a]}</span>`;
-//         one_symbol.style = "display:inline-block; width: 30px; height:30px; border-radius:50%; background-color:#efbf04; text-align:center";
-//         line_text += one_symbol;
-//         console.log(line_text)
-//         line_div.innerHTML += line_text;
-//         console.log(line_div);
-//     }
-//     section_el_4.appendChild(line_div);
-
-//     // section_el_4.innerHTML += `<div style="box-sizing: border-box;width: 150px; height:150px; border-radius:50%; background-color:#efbf04; color:#FFFFFF; text-align: center; display:flex; justify-content:center; align-items: center; font-size: 22px; font-weight: bold;">${B[i]}</div>`
-// }
 
 for (let i = 0; i < B.length; i++){
     let line_div = document.createElement('div');
@@ -136,7 +117,41 @@ for (let i = 0; i < B.length; i++){
     for (let a = 0; a < B[i].length; a++){
         line_div.innerHTML += `<span style="display:inline-block; width: 30px; height:30px; border-radius:50%; background-color:#efbf04; text-align:center">${B[i][a]}</span>`
     }
-    console.log(line_div)
     section_el_4.appendChild(line_div);
 
 }
+
+
+//task 8
+//Html faile sukurkite du ul tagus (tiesiogiai). Į vieną sukurtą tagą, su JS, sudėkite li tagus su iš masyvo C nuskaitytais gyvūnais, kurių pavadinimas ne ilgesnis kaip 6 raidės, į kitą likusius.
+ let ul_el_gyv1 = document.querySelector(".gyvunai-C1");
+ let ul_el_gyv2 = document.querySelector(".gyvunai-C2");
+
+ for (let i = 0; i < C.length; i++){
+    console.log(C[i])
+    console.log(C[i].length);
+
+    if(C[i].length <= 6){
+        ul_el_gyv1.innerHTML += `<li>${C[i]}</li>`;
+    }
+    if(C[i].length > 6){
+        ul_el_gyv2.innerHTML += `<li>${C[i]}</li>`;
+    }
+ }
+
+
+ //task 9
+ //Html faile sukurkite ul tagą (tiesiogiai). Į sukurtą tagą, su JS, sudėkite li tagus su iš masyvo B nuskaitytais gyvūnais. Išfiltruokite ir nedėkite šunų.
+ //masyve B ir taip nera sunu. Darau su masyvu C
+console.log("task 9 -----------");
+ let be_sunu_el = document.querySelector(".be-sunu");
+
+let be_sunu = C.filter(item => !item.includes("Šuo"));
+console.log(be_sunu);
+
+be_sunu.forEach(item =>{
+    let li_el = document.createElement("li");
+    li_el.innerText = item;
+    be_sunu_el.appendChild(li_el);
+    }
+    )
