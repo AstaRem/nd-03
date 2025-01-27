@@ -161,10 +161,55 @@ for (let i = 1; i <= 10; i++){
 
  console.log(match_counter);
 
-
-
-
+ //task ------------------ 
 // 7. Paskaičiuoti klasės “salys” šalių skaičių, kurių pavadinimai ilgesni nei 7 raidės. Rezultatą išvesti į konsolę;
-// 8. Paskaičiuoti ko daugiau pliusų ar minusų klasėje “pliusai-minusai”. Rezultatą išvesti į konsolę;
+console.log("task 7  -----");
+
+let countries_array = [];
+let country_counter = 0;
+
+for (let i = 1; i <= 10; i++){
+    country_span = document.querySelector(`section.salys> span:nth-child(${i})`);
+     let span_value = country_span.innerText;
+        countries_array.push(span_value);
+ }
+
+ console.log(countries_array);
+
+ countries_array.forEach(country => {
+    if(country.length > 7){
+        console.log(country);
+        country_counter++
+    }
+ })
+
+ console.log(country_counter);
+
+// task 8 ------------------
+ // 8. Paskaičiuoti ko daugiau pliusų ar minusų klasėje “pliusai-minusai”. Rezultatą išvesti į konsolę;
+ console.log("task 8  -----");
+
+ let symbol_array = [];
+ let plus_counter = 0;
+ let minus_counter = 0;
+ 
+ for (let i = 1; i <= 13; i++){
+     symbol_span = document.querySelector(`section.pliusai-minusai> span:nth-child(${i})`);
+      let span_value = symbol_span.innerText;
+         symbol_array.push(span_value);
+  }
+ 
+  console.log(symbol_array);
+
+  symbol_array.forEach(symbol => {
+    if (symbol == '+'){
+        plus_counter++;
+    } else if (symbol == '-'){
+        minus_counter++
+    }
+  })
+  console.log(`Plus:${plus_counter}`);
+  console.log(`Minus:${minus_counter}`);
+
 // 9. Paskaičiuoti kiek minusų yra klasėje “keisti-minusai”. Rezultatą išvesti į konsolę;
 // 10. Paskaičiuoti kiek klasėje “raudonos-salys” yra raudonų šalių. Rezultatą išvesti į konsolę;
