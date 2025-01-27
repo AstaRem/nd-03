@@ -210,6 +210,39 @@ for (let i = 1; i <= 10; i++){
   })
   console.log(`Plus:${plus_counter}`);
   console.log(`Minus:${minus_counter}`);
-
+  
+//   task 9 --------
 // 9. Paskaičiuoti kiek minusų yra klasėje “keisti-minusai”. Rezultatą išvesti į konsolę;
+console.log("task 9  -----");
+let all_symbols_array = [];
+
+every_element = document.querySelectorAll(`section.keisti-minusai > span, section.keisti-minusai > i `); //returns Node list. .querySelector() return the first element
+
+console.log(every_element);
+
+every_element.forEach(element => all_symbols_array.push(element.innerText));
+console.log(all_symbols_array);
+
+//could do with counter, as befor, OR could use the filter() method. returns an array with items, matching th condition given
+
+const counted_minus = all_symbols_array.filter(item => item === "-").length;
+ console.log(`counted minus: ${counted_minus}`);
+
+
+// task 10 ----------
 // 10. Paskaičiuoti kiek klasėje “raudonos-salys” yra raudonų šalių. Rezultatą išvesti į konsolę;
+console.log("task 10  -----");
+
+let all_countries_array = [];
+let red_countries = 0;
+
+let all_countries = document.querySelectorAll("section.raudonos-salys > span");
+console.log(all_countries);
+
+all_countries.forEach(item => {
+    if (item.style.color =="crimson"){
+        red_countries++
+    }
+})
+
+console.log(red_countries);
