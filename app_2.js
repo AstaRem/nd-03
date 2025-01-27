@@ -87,8 +87,83 @@ for (let i = 1; i <= 10; i++){
 // 4. Paskaičiuoti klasės “gyvuliai” gyvulių kiekį (ne span tagų kiekį). Rezultatą išvesti į konsolę;
 console.log("task 4 -----");
 
+let animals_array = [];
+let animal_counter = 0;
+
+for (let i = 1; i <= 9; i++){
+    animal_span = document.querySelector(`section.gyvuliai > span:nth-child(${i})`);
+     let span_value = animal_span.innerText;
+        animals_array.push(span_value);
+ }
+
+ console.log(animals_array);
+
+ animals_array.map(item => {
+    if(item !== ''){
+        animal_counter++;
+    }
+ })
+ console.log(animal_counter);
+
+
+//task 5 -----------------
 // 5. Paskaičiuoti klasės “vaisiai” raidžių A (didžiųjų ir mažųjų kartu) kiekį. Rezultatą išvesti į konsolę;
+console.log("task 5 -----");
+
+let words_array = [];
+let a_counter = [];
+
+for (let i = 1; i <= 6; i++){
+    word_span = document.querySelector(`section.vaisiai > span:nth-child(${i})`);
+     let span_value = word_span.innerText;
+        words_array.push(span_value);
+ }
+
+ console.log(words_array);
+
+for (let i = 0; i < words_array.length; i++){
+    console.log(words_array[i])
+    for (let n = 0; n < words_array[i].length; n++){
+        if (words_array[i][n] == 'A'){
+            a_counter++;
+        } else if (words_array[i][n] == 'a'){
+            a_counter++;
+        }
+    }
+}
+
+ console.log(a_counter);
+
+
+// task 6 ----------------
 // 6. Paskaičiuoti klasės “miestai” miestų, kurie prasideda K arba baigiasi i kiekį. Rezultatą išvesti į konsolę;
+console.log("task 6 -----");
+
+let towns_array = [];
+let match_counter = [];
+
+for (let i = 1; i <= 10; i++){
+    town_span = document.querySelector(`section.miestai > span:nth-child(${i})`);
+     let span_value = town_span.innerText;
+        towns_array.push(span_value);
+ }
+
+ console.log(towns_array);
+
+ towns_array.forEach(town => {
+    if (town[0] == 'K'){
+        match_counter++;
+    } else if(town[town.length-1] == 'i'){
+        match_counter++;
+    }
+ }
+ )
+
+ console.log(match_counter);
+
+
+
+
 // 7. Paskaičiuoti klasės “salys” šalių skaičių, kurių pavadinimai ilgesni nei 7 raidės. Rezultatą išvesti į konsolę;
 // 8. Paskaičiuoti ko daugiau pliusų ar minusų klasėje “pliusai-minusai”. Rezultatą išvesti į konsolę;
 // 9. Paskaičiuoti kiek minusų yra klasėje “keisti-minusai”. Rezultatą išvesti į konsolę;
